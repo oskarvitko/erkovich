@@ -14,26 +14,38 @@
 
     &__inner {
         color: #000;
-        max-width: 550px;
         margin-left: auto;
 
+        max-width: 1000px;
         position: relative;
 
         &-title {
+            text-align: left;
             position: absolute;
-            font-size: 2em;
-            top: 1em;
-            left: 1em;
+            font-size: 3.1vw;
+            top: 2em;
+            left: 3rem;
             z-index: 1;
 
-            max-width: 300px;
+            max-width: 100px;
+            @media (min-width: 2000px) {
+                font-size: 4em;
+            }
         }
 
         &-description {
             margin: 0;
-            font-size: 1em;
-            padding: 2em;
+            font-size: 1.03vw;
             line-height: 1.2;
+
+            position: absolute;
+            left: 3rem;
+            bottom: 3rem;
+            width: 50%;
+
+            @media (min-width: 2000px) {
+                font-size: 1.3em;
+            }
 
             span {
                 display: block;
@@ -49,62 +61,35 @@
         &-image {
             text-align: right;
             img {
-                width: 100%;
-                max-height: 68vh;
-                @include breakpoint(1150px) {
-                    max-height: 64vh;
-                    height: 50vw;
-                }
+                margin-right: -5%;
+                width: 72%;
+                max-height: 95vh;
                 mask-image: linear-gradient(to left, rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
             }
         }
 
         @include breakpoint($bp-lg) {
-            display: flex;
-            align-items: center;
-            max-width: 100%;
-
-            &-image {
-                width: 200%;
-
-                img {
-                    max-height: none;
-                    height: auto;
-                }
-            }
-
-            &-description {
-                margin-top: 5vw;
-            }
-
-            &-title {
-                top: 1em;
-                right: 1em;
-                left: auto;
-                max-width: 100%;
-                font-size: 3.5vw;
-            }
-        }
-        @include breakpoint($bp-md) {
-            flex-direction: column;
-
-            &-image {
-                width: 100%;
-            }
-
             &-title {
                 font-size: 5vw;
             }
-
             &-description {
-                font-size: 2.5vw;
-                margin: 0;
+                font-size: 2vw;
             }
         }
         @include breakpoint($bp-sm) {
             &-description {
-                font-size: 3.5vw;
-                padding: 1em;
+                left: 1rem;
+                bottom: 1rem;
+                font-size: 2.4vw;
+            }
+            &-title {
+                left: 1rem;
+                font-size: 6vw;
+            }
+            &-image {
+                img {
+                    margin-right: -10%;
+                }
             }
         }
     }
