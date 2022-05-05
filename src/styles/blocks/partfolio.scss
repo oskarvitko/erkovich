@@ -1,0 +1,66 @@
+.partfolio {
+    color: #fff;
+    text-align: center;
+
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 1em 3em 3em 3em;
+
+
+    @include breakpoint($bp-md) {
+        font-size: 3vw;
+    }
+
+    &__item {
+        margin-top: 2em;
+
+        &-title {
+            font-weight: 400;
+            font-size: 3.2em;
+            margin-bottom: .5em;
+        }
+
+        &-description {
+            margin: 0;
+            font-size: 1.1em;
+            font-weight: 300;
+        }
+
+        &-image {
+            border: 3em solid black;
+            border-image: url('../assets/images/border.png') 12% 8.5% 11% round;
+
+            margin-bottom: 2.5em;
+
+            img {
+                width: 100%;
+                cursor: zoom-in;
+            }
+
+            &.vertical {
+                width: 75%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+.quates {
+    &::after {
+        content: "»";
+        opacity: 0.8;
+    }
+
+    &::before {
+        content: "«";
+        opacity: 0.8;
+    }
+}

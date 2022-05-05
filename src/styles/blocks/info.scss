@@ -1,0 +1,111 @@
+.info {
+    width: 50%;
+
+    background: linear-gradient(to bottom, #afc2cc, #afc2cc,#a2b4bb, #96a9af, #acb7c7, #adb9c9);
+    max-height: 100vh;
+    overflow: hidden;
+
+    @include breakpoint($bp-lg) {
+        width: 100%;
+    }
+    @include breakpoint($bp-md) {
+        max-height: none;
+    }
+
+    &__inner {
+        color: #000;
+        max-width: 550px;
+        margin-left: auto;
+
+        position: relative;
+
+        &-title {
+            position: absolute;
+            font-size: 2em;
+            top: 1em;
+            left: 1em;
+            z-index: 1;
+
+            max-width: 300px;
+        }
+
+        &-description {
+            margin: 0;
+            font-size: 1em;
+            padding: 2em;
+            line-height: 1.2;
+
+            span {
+                display: block;
+                margin: 1em 0;
+            }
+
+            a {
+                font-weight: 700;
+                color: #000;
+            }
+        }
+
+        &-image {
+            text-align: right;
+            img {
+                width: 100%;
+                max-height: 68vh;
+                @include breakpoint(1150px) {
+                    max-height: 64vh;
+                    height: 50vw;
+                }
+                mask-image: linear-gradient(to left, rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
+            }
+        }
+
+        @include breakpoint($bp-lg) {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+
+            &-image {
+                width: 200%;
+
+                img {
+                    max-height: none;
+                    height: auto;
+                }
+            }
+
+            &-description {
+                margin-top: 5vw;
+            }
+
+            &-title {
+                top: 1em;
+                right: 1em;
+                left: auto;
+                max-width: 100%;
+                font-size: 3.5vw;
+            }
+        }
+        @include breakpoint($bp-md) {
+            flex-direction: column;
+
+            &-image {
+                width: 100%;
+            }
+
+            &-title {
+                font-size: 5vw;
+            }
+
+            &-description {
+                font-size: 2.5vw;
+                margin: 0;
+            }
+        }
+        @include breakpoint($bp-sm) {
+            &-description {
+                font-size: 3.5vw;
+                padding: 1em;
+            }
+        }
+    }
+}

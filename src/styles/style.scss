@@ -1,0 +1,15 @@
+@import './fonts';
+@import './vars';
+@import './mixins';
+
+$fa-font-path: 'assets/fonts';
+@import '~font-awesome/scss/font-awesome';
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: italic;
+}
+
+@import './blocks/main.scss';
+@import './blocks/partfolio.scss';
+@import './blocks/info.scss';
